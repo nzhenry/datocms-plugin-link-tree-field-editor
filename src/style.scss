@@ -1,0 +1,15 @@
+.container {
+  background-color: white;
+  padding: 24px;
+}
+h1 {
+  font-weight: bold;
+}
+select {
+  margin-left: 5px;
+  padding: 5px;
+  border-color: var(--accent-color);
+  border-radius: 5px;
+  color: var(--accent-color);
+  font-weight: bold;
+}
