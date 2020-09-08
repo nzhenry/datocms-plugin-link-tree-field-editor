@@ -1,7 +1,7 @@
 {
   "name": "datocms-plugin-link-tree-field-editor",
   "homepage": "https://github.com/nzhenry/datocms-plugin-link-tree-field-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Custom recursive category field editor for School Road Publishing",
   "main": "index.js",
   "scripts": {
