@@ -1,6 +1,6 @@
-# Datocms Plugin Link Tree Field Editor DatoCMS plugin
+# Datocms Plugin - Recursive Categories Editor
 
-A field editor for links when the linked model is a tree.
+Custom recursive category field editor for School Road Publishing
 
 ## Configuration
 
