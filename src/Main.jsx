@@ -24,9 +24,9 @@ export default class Main extends Component {
 
   refresh = () => {
     const { plugin } = this.props;
-    const { token } = plugin.parameters.global;
+    const { token, draft } = plugin.parameters.global;
     const publicationIds = plugin.getFieldValue('publications');
-    getCategories(token, publicationIds).then(result => {
+    getCategories({draft, token, publicationIds}).then(result => {
       this.setState({publications: result.publications});
     });
     const rawFieldValue = plugin.getFieldValue('categories');

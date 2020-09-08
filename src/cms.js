@@ -1,7 +1,8 @@
 const API_URL = 'https://graphql.datocms.com/';
+const DRAFT_API_URL = 'https://graphql.datocms.com/preview/';
 
-function fetchAPI(token, query, { variables } = {}) {
-  return fetch(API_URL, {
+function fetchAPI({draft, token, query, variables = {} }) {
+  return fetch(draft ? DRAFT_API_URL : API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -24,19 +25,19 @@ function fetchAPI(token, query, { variables } = {}) {
   });
 }
 
-export function getCategories(token, publicationIds) {
-  return fetchAPI(token,`
-    query Categories($publicationIds: [ItemId]) {
+export function getCategories({draft, token, publicationIds}) {
+  return fetchAPI({
+    draft,
+    token,
+    query: `query Categories($publicationIds: [ItemId]) {
       publications: allPublications(filter: {id: {in: $publicationIds}}) {
         id
         title
         categories
       }
     }`,
-      {
-        variables: {
-          publicationIds,
-        },
-      }
-  )
+    variables: {
+      publicationIds,
+    },
+  })
 }
